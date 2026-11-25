@@ -3,8 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - master
+      - '**'
   workflow_dispatch:
 
 permissions:
@@ -26,13 +25,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
       - name: Build production bundle
-        run: npm run build
+        run: |
+          npm run build
+          touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
