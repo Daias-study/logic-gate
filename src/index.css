@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', 'Noto Sans JP', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F6F5F0;
+    color: #181A1F;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Tactile wire signal flow animation */
+@keyframes signal-flow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.wire-flow-active {
+  stroke-dasharray: 6 6;
+  animation: signal-flow 0.65s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wire-flow-active {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+/* Engineering workbench subtle dot grid */
+.workbench-grid {
+  background-image: radial-gradient(#CBD5E1 1.15px, transparent 1.15px);
+  background-size: 20px 20px;
+}

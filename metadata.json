@@ -1,0 +1,8 @@
+{
+  "name": "Logic Gate Lab — 電気電子回路シミュレータ",
+  "description": "Computer Engineering for Babies を参考にしたインタラクティブ論理ゲート回路シミュレータ。基本ゲートからラッチ回路、自由な回路設計まで視覚的に学べます。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
